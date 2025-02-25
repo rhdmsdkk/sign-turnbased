@@ -112,7 +112,7 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
 	{
-        Debug.Log("Player turn!");
+        Debug.Log("Player's turn!");
         combatButtons.SetActive(true);
 	}
 
