@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public class BattleSystem : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class BattleSystem : MonoBehaviour
 
     public GameObject combatButtons;
     public GameObject reviewPopUp;
+    public GameObject attackPopUp;
+    public Text signText;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class BattleSystem : MonoBehaviour
 	{
         combatButtons.SetActive(false);
         reviewPopUp.SetActive(false);
+        attackPopUp.SetActive(false);
 		GameObject playerGO = Instantiate(playerPrefab);
 		playerUnit = playerGO.GetComponent<Unit>();
 
@@ -45,11 +49,22 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
 	{
+        combatButtons.SetActive(false);
+        attackPopUp.SetActive(true);
+
+        while (!Input.GetKeyDown(KeyCode.Space))
+        {
+            yield return null;
+        }
+
+        signText.text = "You signed:\napple";
+
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
 
 		yield return new WaitForSeconds(2f);
+        signText.text = "You signed:\n";
 
 		if(isDead)
 		{
@@ -66,6 +81,7 @@ public class BattleSystem : MonoBehaviour
 	{
         Debug.Log("Enemy's Turn!");
         combatButtons.SetActive(false);
+        attackPopUp.SetActive(false);
 
 		yield return new WaitForSeconds(1f);
 
@@ -90,6 +106,7 @@ public class BattleSystem : MonoBehaviour
     void EndBattle()
 	{
 		combatButtons.SetActive(false);
+        attackPopUp.SetActive(false);
 	}
 
 
@@ -133,6 +150,15 @@ public class BattleSystem : MonoBehaviour
         {
             reviewPopUp.SetActive(false);
         }
+    }
+
+    public void Skip()
+    {
+        if (attackPopUp != null)
+        {
+            attackPopUp.SetActive(false);
+        }
+        StartCoroutine(EnemyTurn());
     }
 
 }
