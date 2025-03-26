@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.TextCore;
 using System.Collections;
 
 
@@ -35,7 +37,7 @@ namespace TMPro.Examples
 
                     textMeshPro.alignment = TextAlignmentOptions.Bottom;
                     textMeshPro.fontSize = 96;
-                    textMeshPro.enableKerning = false;
+                    textMeshPro.fontFeatures = new List<OTL_FeatureTag>();
 
                     textMeshPro.color = new Color32(255, 255, 0, 255);
                     textMeshPro.text = "!";
@@ -71,7 +73,7 @@ namespace TMPro.Examples
                     // Canvas WorldSpace Camera
                     GameObject go = new GameObject();
                     Canvas canvas = go.AddComponent<Canvas>();
-                    canvas.worldCamera = Camera.main;
+                    canvas.worldCamera = UnityEngine.Camera.main;
 
                     go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                     go.transform.position = new Vector3(Random.Range(-95f, 95f), 5f, Random.Range(-95f, 95f));

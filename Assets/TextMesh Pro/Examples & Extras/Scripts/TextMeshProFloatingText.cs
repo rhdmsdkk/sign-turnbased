@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.TextCore;
 
 
 namespace TMPro.Examples
@@ -43,7 +45,7 @@ namespace TMPro.Examples
             //m_floatingText_Transform = m_floatingText.transform;
             //m_floatingText_Transform.position = m_transform.position + new Vector3(0, 15f, 0);
 
-            m_cameraTransform = Camera.main.transform;
+            m_cameraTransform = UnityEngine.Camera.main.transform;
         }
 
         void Start()
@@ -65,7 +67,7 @@ namespace TMPro.Examples
                 m_textMeshPro.fontSize = 24;
                 //m_textMeshPro.enableExtraPadding = true;
                 //m_textMeshPro.enableShadows = false;
-                m_textMeshPro.enableKerning = false;
+                m_textMeshPro.fontFeatures = new List<OTL_FeatureTag>();
                 m_textMeshPro.text = string.Empty;
                 m_textMeshPro.isTextObjectScaleStatic = IsTextObjectScaleStatic;
 

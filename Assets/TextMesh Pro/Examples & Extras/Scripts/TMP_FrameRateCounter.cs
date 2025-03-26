@@ -20,7 +20,7 @@ namespace TMPro.Examples
 
         private TextMeshPro m_TextMeshPro;
         private Transform m_frameCounter_transform;
-        private Camera m_camera;
+        private UnityEngine.Camera m_camera;
 
         private FpsCounterAnchorPositions last_AnchorPosition;
 
@@ -29,7 +29,7 @@ namespace TMPro.Examples
             if (!enabled)
                 return;
 
-            m_camera = Camera.main;
+            m_camera = UnityEngine.Camera.main;
             Application.targetFrameRate = 9999;
 
             GameObject frameCounter = new GameObject("Frame Counter");
@@ -43,7 +43,7 @@ namespace TMPro.Examples
             m_frameCounter_transform.SetParent(m_camera.transform);
             m_frameCounter_transform.localRotation = Quaternion.identity;
 
-            m_TextMeshPro.enableWordWrapping = false;
+            m_TextMeshPro.textWrappingMode = TextWrappingModes.NoWrap;
             m_TextMeshPro.fontSize = 24;
             //m_TextMeshPro.FontColor = new Color32(255, 255, 255, 128);
             //m_TextMeshPro.edgeWidth = .15f;
