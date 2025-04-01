@@ -41,22 +41,6 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            interactIndicator.enabled = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            interactIndicator.enabled = false;
-        }
-    }
-
     public void PlayDialogue()
     {
         if (hasInteracted)
@@ -80,4 +64,22 @@ public class Interactable : MonoBehaviour
         i = 0;
         hasInteracted = true;
     }
+
+    #region Detection Range
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            interactIndicator.enabled = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            interactIndicator.enabled = false;
+        }
+    }
+    #endregion
 }
