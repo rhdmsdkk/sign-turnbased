@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.OnScreen;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    private bool isJumping;
+    private bool isJumping = false;
+    private bool canMove = true;
 
     private void Start()
     {
@@ -20,6 +18,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (canMove) CheckInput();
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove) Move();
+    }
+
+    #region Movement Logic
+    private void CheckInput()
     {
         if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
@@ -33,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         isJumping = (Gamepad.current != null && Gamepad.current.buttonSouth.isPressed);
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
 
@@ -50,4 +59,15 @@ public class PlayerMovement : MonoBehaviour
 
         return Physics2D.Raycast(transform.position, Vector2.down, 1.1f, layerMask);
     }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+    #endregion
 }
