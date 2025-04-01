@@ -49,6 +49,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -129,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914765ecb18674d4991e89050a97bda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Apple
+  unitName: 
   damage: 10
   maxHP: 100
   currentHP: 100
