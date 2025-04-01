@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1375741520151189529, guid: e4d1261afb740466a8955e901567fdff, type: 3}
   enemyPrefab: {fileID: 4744872212714825259, guid: 7bc0bbb28be64436f983fba17184ee55, type: 3}
+  slrTest: {fileID: 1174276601}
   playerHUD: {fileID: 1381729862}
   enemyHUD: {fileID: 1436584380}
   state: 0
@@ -1891,8 +1892,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -6}
-  m_SizeDelta: {x: 160, y: 66.58}
+  m_AnchoredPosition: {x: -2, y: -12.08}
+  m_SizeDelta: {x: 160, y: 74.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060303022
 MonoBehaviour:
@@ -1927,10 +1928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'REVIEW
-
-
-    PRESS SPACE FOR "APPLE" ATTACK'
+  m_Text: "REVIEW\n\nLike a \"Call\" Gesture or \n\"Surfs UP\""
 --- !u!222 &1060303023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2066,6 +2064,7 @@ GameObject:
   - component: {fileID: 1174276598}
   - component: {fileID: 1174276597}
   - component: {fileID: 1174276600}
+  - component: {fileID: 1174276601}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2191,6 +2190,24 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1174276601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174276596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fdc2837bafd542078e147c764a09452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engine: {fileID: 1511275921}
+  battleSystem: {fileID: 328969151}
+  enemyHUD: {fileID: 1436584380}
+  levelSigns:
+  - yellow
+  - dance
 --- !u!1 &1219065036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2510,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1158053210}
   hpSlider: {fileID: 1721149412}
+--- !u!114 &1511275921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3508694001495842164, guid: 497d5c774c3ce4f1ca5df896393cac60, type: 3}
+  m_PrefabInstance: {fileID: 700159639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce881f852aa24ed8aada6bc011e617a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1609646428
 GameObject:
   m_ObjectHideFlags: 0
