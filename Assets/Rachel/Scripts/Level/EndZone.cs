@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EndZone : MonoBehaviour
 {
@@ -9,7 +6,7 @@ public class EndZone : MonoBehaviour
     {
         if (collision.TryGetComponent<PlayerMovement>(out PlayerMovement _))
         {
-            SceneManager.LoadScene("Chapter1");
+            LevelManager.instance.LoadChapter(1);
         }
     }
 }
