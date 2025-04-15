@@ -457,10 +457,18 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1128905128}
+    - target: {fileID: 6746793992173430297, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7620515719532145783, guid: 4590ae5068c55054fbc8934856194030, type: 3}
     - target: {fileID: 6780288274059550982, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 942349438}
+    - target: {fileID: 7390164851956643880, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 16116725aa6520b46b58334517ce06ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -480,11 +488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3469290270041055049, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.4528302
+      value: 0.11320752
       objectReference: {fileID: 0}
     - target: {fileID: 3469290270041055049, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.36006537
+      value: 0.09056598
       objectReference: {fileID: 0}
     - target: {fileID: 3469290270041055049, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
       propertyPath: m_BackGroundColor.r
