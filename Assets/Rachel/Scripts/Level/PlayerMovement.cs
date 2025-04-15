@@ -7,14 +7,19 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
+    [Header("Animation")]
+    public Animator animator;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool isJumping = false;
     private bool canMove = true;
+    private Vector3 ogScale;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ogScale = animator.transform.localScale;
     }
 
     private void Update()
@@ -33,10 +38,16 @@ public class PlayerMovement : MonoBehaviour
         if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
             moveInput = Gamepad.current.leftStick.ReadValue();
+            Debug.Log(moveInput);
+
+            // animate
+            animator.SetBool("isWalking", true);
+            animator.transform.localScale = new Vector3(ogScale.x * (moveInput.x >= 0 ? 1 : -1), ogScale.y, ogScale.z);
         }
         else
         {
             moveInput = Vector2.zero;
+            animator.SetBool("isWalking", false);
         }
 
         isJumping = (Gamepad.current != null && Gamepad.current.buttonSouth.isPressed);
