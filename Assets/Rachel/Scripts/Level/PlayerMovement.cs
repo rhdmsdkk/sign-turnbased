@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
             moveInput = Gamepad.current.leftStick.ReadValue();
+            Debug.Log(moveInput);
 
             // animate
             animator.SetBool("isWalking", true);

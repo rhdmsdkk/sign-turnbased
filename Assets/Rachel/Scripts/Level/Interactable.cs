@@ -43,6 +43,8 @@ public class Interactable : MonoBehaviour
 
     public void PlayDialogue()
     {
+        interactIndicator.enabled = false;
+
         if (hasInteracted)
         {
             lines = dialogue.repeatLines;
@@ -57,6 +59,8 @@ public class Interactable : MonoBehaviour
 
     private void EndDialogue()
     {
+        interactIndicator.enabled = true;
+
         dialoguePanel.SetActive(false);
         isPlayingDialogue = false;
         player.EnableMovement();
