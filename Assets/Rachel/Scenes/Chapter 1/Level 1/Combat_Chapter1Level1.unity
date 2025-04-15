@@ -2414,6 +2414,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1436584380}
   levelSigns:
   - go
+  - wake
 --- !u!1 &1219065036
 GameObject:
   m_ObjectHideFlags: 0
