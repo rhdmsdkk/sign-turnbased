@@ -25,6 +25,8 @@ public class BattleSystem : MonoBehaviour
     public Text signText;
     public event System.Action OnAttackInitiated;
 
+    public ReviewVideo reviewVideoPlayer;
+
     void Start()
     {
         state = BattleState.START;
@@ -153,6 +155,11 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerReview()
     {
         reviewPopUp.SetActive(true);
+        if (reviewVideoPlayer != null)
+        {
+            reviewVideoPlayer.rawImage.enabled = true;
+            reviewVideoPlayer.PlayReviewVideo(enemyUnit.unitName);
+        }
         yield return new WaitUntil(() => !reviewPopUp.activeSelf);
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
@@ -188,6 +195,12 @@ public class BattleSystem : MonoBehaviour
         if (attackPopUp != null)
         {
             attackPopUp.SetActive(false);
+
+            if (reviewVideoPlayer != null)
+            {
+                reviewVideoPlayer.StopReviewVideo();
+                reviewVideoPlayer.rawImage.enabled = false;
+            }
         }
         StartCoroutine(EnemyTurn());
     }
