@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597f6351de1675c498fc60f36f3996c2, type: 3}
+  m_Name: Level1Elder
+  m_EditorClassIdentifier: 
+  lines:
+  - You... were able to awaken young Tilly? Truly impressive.
+  - "I guess the gatekeeper led you here to learn more? Well, it started when the
+    sky cracked. They came\u2013the Hollow-Tongues\u2013through the clouds."
+  - "They don\u2019t speak, or well, they can\u2019t. They un-speak and take the
+    ability away from people be it words or gestures."
+  - You must GO.
+  - Keep moving. Be careful of the shadowed path ahead.
+  repeatLines:
+  - You must GO.

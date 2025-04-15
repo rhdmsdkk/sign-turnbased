@@ -450,6 +450,10 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 2917473293782258075, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d7dffc7ca338d64c9d7a5ba51e1c316, type: 2}
+    - target: {fileID: 2917473293782258075, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1128905128}
@@ -470,6 +474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1920538696029721733, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3738328662413477788, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
       propertyPath: m_Name
       value: Player
@@ -516,6 +524,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945020824653795255, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
       propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043699638934890276, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
