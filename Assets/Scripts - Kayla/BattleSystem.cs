@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -146,6 +145,7 @@ public class BattleSystem : MonoBehaviour
         attackPopUp.SetActive(false);
 
         // TODO: replace this with better logic for win/lose states, or returning to the level
+        slrTest.engine.Pause();
         LevelManager.instance.LoadChapter(1);
     }
 

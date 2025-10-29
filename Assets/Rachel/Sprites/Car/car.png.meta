@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 529e5d91faf3de74a922e6f5df14f7a5
+guid: 67934faddb504ce4eae387241bd74d51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2734585428405448545
-    second: Wraith_01_Idle_010_0
+      213: -8030835215644163416
+    second: car_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wraith_01_Idle_010_0
+      name: car_0
       rect:
         serializedVersion: 2
-        x: 145
-        y: 95
-        width: 198
-        height: 287
+        x: 77
+        y: 201
+        width: 640
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f901fe39a0dcc0ad0800000000000000
-      internalID: -2734585428405448545
+      spriteID: 8a205d9abedbc8090800000000000000
+      internalID: -8030835215644163416
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Wraith_01_Idle_010_0: -2734585428405448545
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
