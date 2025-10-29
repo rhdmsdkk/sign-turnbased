@@ -6,7 +6,11 @@ public class Interactable : MonoBehaviour
 {
     public DialogueScriptableObject dialogue;
     public UnityEngine.UI.Image interactIndicator;
+    public bool autoTrigger;
+    public bool promptSign;
+    public string promptSignString;
     public GameObject dialoguePanel;
+    public ReviewPanel reviewPanel;
 
     private bool hasInteracted = false;
     private bool isPlayingDialogue = false;
@@ -67,6 +71,22 @@ public class Interactable : MonoBehaviour
 
         i = 0;
         hasInteracted = true;
+
+        if (promptSign)
+        {
+            PromptSign();
+        }
+
+        if (autoTrigger)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void PromptSign()
+    {
+        reviewPanel.gameObject.SetActive(true);
+        reviewPanel.StartVideo(promptSignString);
     }
 
     #region Detection Range
@@ -74,7 +94,14 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            interactIndicator.enabled = true;
+            if (autoTrigger)
+            {
+                PlayDialogue();
+            }
+            else
+            {
+                interactIndicator.enabled = true;
+            }
         }
     }
 
