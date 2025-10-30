@@ -7,9 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
-    [Header("Controls")]
-    public GameObject joystick;
-
     [Header("Animation")]
     public Animator animator;
 
@@ -41,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
             moveInput = Gamepad.current.leftStick.ReadValue();
+            Debug.Log(moveInput);
 
             // animate
             animator.SetBool("isWalking", true);
@@ -75,14 +73,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void DisableMovement()
     {
-        // canMove = false;
-        joystick.SetActive(false);
+        canMove = false;
     }
 
     public void EnableMovement()
     {
-        // canMove = true;
-        joystick.SetActive(true);
+        canMove = true;
     }
     #endregion
 }
