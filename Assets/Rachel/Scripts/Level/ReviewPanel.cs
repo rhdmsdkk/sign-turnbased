@@ -40,7 +40,6 @@ public class ReviewPanel : MonoBehaviour
 
             if (sign.ToLower() == word)
             {
-                slrEngine.SetActive(false);
                 gameObject.SetActive(false);
             }
         });
