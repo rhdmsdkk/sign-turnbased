@@ -9,6 +9,9 @@ public class ReviewPanel : MonoBehaviour
     public GameObject slrEngine;
     public ReviewVideo video;
 
+    [HideInInspector]
+    public Interactable callingInteractable;
+
     private string word;
     private SimpleExecutionEngine engine;
     private int frame = 0;
@@ -23,8 +26,23 @@ public class ReviewPanel : MonoBehaviour
     public void StartVideo(string word)
     {
         this.word = word;
+        review.SetActive(true);
         video.PlayReviewVideo(this.word);
     }
+
+    public void EndReview()
+    {
+        slrEngine.SetActive(false);
+        gameObject.SetActive(false);
+
+        if (callingInteractable != null)
+        {
+            callingInteractable.TriggerNewAction();
+
+            callingInteractable = null;
+        }
+    }
+
 
     public void StartPlayerSign()
     {
@@ -40,7 +58,7 @@ public class ReviewPanel : MonoBehaviour
 
             if (sign.ToLower() == word)
             {
-                gameObject.SetActive(false);
+                EndReview();
             }
         });
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class Interactable : MonoBehaviour
     private TextMeshProUGUI dialogueDisplay;
     private List<string> lines;
 
+    private bool canInteract = false;
+    public bool triggerNewAction;
+    public UnityEvent onDialogueCompleted;
+
     private int i = 0;
 
     private void Start()
@@ -30,6 +35,18 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            if (isPlayingDialogue)
+            {
+                i += 1;
+            }
+            else if (canInteract)
+            {
+                PlayDialogue();
+            }
+        }
+
         if (isPlayingDialogue && Input.GetMouseButtonDown(0))
         {
             i += 1;
@@ -63,7 +80,7 @@ public class Interactable : MonoBehaviour
 
     private void EndDialogue()
     {
-        interactIndicator.enabled = true;
+        interactIndicator.enabled = false;
 
         dialoguePanel.SetActive(false);
         isPlayingDialogue = false;
@@ -83,8 +100,18 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public void TriggerNewAction()
+    {
+        if (triggerNewAction)
+        {
+            onDialogueCompleted.Invoke();
+        }
+    }
+
+
     private void PromptSign()
     {
+        reviewPanel.callingInteractable = this;
         reviewPanel.gameObject.SetActive(true);
         reviewPanel.StartVideo(promptSignString);
     }
@@ -98,9 +125,10 @@ public class Interactable : MonoBehaviour
             {
                 PlayDialogue();
             }
-            else
+            else if (!hasInteracted)
             {
                 interactIndicator.enabled = true;
+                canInteract = true;
             }
         }
     }
@@ -110,6 +138,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             interactIndicator.enabled = false;
+            canInteract = false;
         }
     }
     #endregion
