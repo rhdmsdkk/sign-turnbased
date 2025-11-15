@@ -15,6 +15,7 @@ public class ReviewPanel : MonoBehaviour
     private string word;
     private SimpleExecutionEngine engine;
     private int frame = 0;
+    private bool finalInteraction = false;
 
     public void Start()
     {
@@ -30,6 +31,12 @@ public class ReviewPanel : MonoBehaviour
         video.PlayReviewVideo(this.word);
     }
 
+    public void StartVideo(string word, bool finalInteraction)
+    {
+        StartVideo(word);
+        this.finalInteraction = finalInteraction;
+    }
+
     public void EndReview()
     {
         slrEngine.SetActive(false);
@@ -40,6 +47,11 @@ public class ReviewPanel : MonoBehaviour
             callingInteractable.TriggerNewAction();
 
             callingInteractable = null;
+        }
+
+        if (finalInteraction)
+        {
+            LevelManager.instance.LoadCurrentEpisode();
         }
     }
 

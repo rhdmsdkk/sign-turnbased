@@ -145,7 +145,7 @@ public class BattleSystem : MonoBehaviour
         attackPopUp.SetActive(false);
 
         // TODO: replace this with better logic for win/lose states, or returning to the level
-        LevelManager.instance.LoadChapter(1);
+        LevelManager.instance.LoadEpisode(1);
     }
 
     void PlayerTurn()

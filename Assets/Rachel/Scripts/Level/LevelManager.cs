@@ -6,8 +6,8 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    private int currentLevel;
-    private int currentChapter;
+    private int currentAct;
+    private int currentEpisode;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        currentChapter = Convert.ToInt32(currentScene.Substring(currentScene.Length - 1, 1));
+        currentEpisode = Convert.ToInt32(currentScene.Substring(currentScene.Length - 1, 1));
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -36,15 +36,20 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Scene loaded: " + scene.name);
     }
 
-    public void LoadLevel(int level)
+    public void LoadAct(int act)
     {
-        currentLevel = level;
-        SceneManager.LoadScene("Chapter" + currentChapter + "Level" + level);
+        currentAct = act;
+        SceneManager.LoadScene("Episode" + currentEpisode + "Act" + act);
     }
 
-    public void LoadChapter(int chapter)
+    public void LoadEpisode(int episode)
     {
-        currentChapter = chapter;
-        SceneManager.LoadScene("Chapter" + chapter);
+        currentEpisode = episode;
+        SceneManager.LoadScene("Episode" + episode);
+    }
+
+    public void LoadCurrentEpisode()
+    {
+        SceneManager.LoadScene("Episode" + currentEpisode);
     }
 }

@@ -16,7 +16,7 @@ public class EndZone : MonoBehaviour
             }
             else
             {
-                LevelManager.instance.LoadChapter(1);
+                LevelManager.instance.LoadEpisode(1);
             }
         }
     }

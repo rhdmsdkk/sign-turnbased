@@ -528,6 +528,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1128905128}
     - target: {fileID: 2917473293782258075, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
+      propertyPath: finalInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917473293782258075, guid: a4f02ee7fec8bd446b70609ecf075ab4, type: 3}
       propertyPath: promptSignString
       value: go
       objectReference: {fileID: 0}
@@ -804,6 +808,7 @@ MonoBehaviour:
   review: {fileID: 318896630}
   slrEngine: {fileID: 99406954}
   video: {fileID: 691138389}
+  callingInteractable: {fileID: 0}
 --- !u!20 &942349438 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3469290270041055049, guid: a78142fe04da1464eb8e4c3b405427fe, type: 3}

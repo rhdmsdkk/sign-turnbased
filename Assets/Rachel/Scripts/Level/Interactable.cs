@@ -5,11 +5,17 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public DialogueScriptableObject dialogue;
-    public UnityEngine.UI.Image interactIndicator;
+    [Header("Config")]
     public bool autoTrigger;
     public bool promptSign;
     public string promptSignString;
+    public bool finalInteraction;
+    public bool triggerNewAction;
+    public UnityEvent onDialogueCompleted;
+
+    [Header("UI")]
+    public DialogueScriptableObject dialogue;
+    public UnityEngine.UI.Image interactIndicator;
     public GameObject dialoguePanel;
     public ReviewPanel reviewPanel;
 
@@ -20,8 +26,6 @@ public class Interactable : MonoBehaviour
     private List<string> lines;
 
     private bool canInteract = false;
-    public bool triggerNewAction;
-    public UnityEvent onDialogueCompleted;
 
     private int i = 0;
 
@@ -93,6 +97,10 @@ public class Interactable : MonoBehaviour
         {
             PromptSign();
         }
+        else if (finalInteraction)
+        {
+            LevelManager.instance.LoadCurrentEpisode();
+        }
 
         if (autoTrigger)
         {
@@ -113,7 +121,7 @@ public class Interactable : MonoBehaviour
     {
         reviewPanel.callingInteractable = this;
         reviewPanel.gameObject.SetActive(true);
-        reviewPanel.StartVideo(promptSignString);
+        reviewPanel.StartVideo(promptSignString, finalInteraction);
     }
 
     #region Detection Range

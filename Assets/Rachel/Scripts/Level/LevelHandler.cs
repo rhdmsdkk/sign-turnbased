@@ -9,13 +9,13 @@ using UnityEngine;
  */
 public class LevelHandler : MonoBehaviour
 {
-    public void LoadLevel(int level)
+    public void LoadAct(int level)
     {
-        LevelManager.instance.LoadLevel(level);
+        LevelManager.instance.LoadAct(level);
     }
 
-    public void LoadChapter(int chapter)
+    public void LoadEpisode(int chapter)
     {
-        LevelManager.instance.LoadChapter(chapter);
+        LevelManager.instance.LoadEpisode(chapter);
     }
 }
