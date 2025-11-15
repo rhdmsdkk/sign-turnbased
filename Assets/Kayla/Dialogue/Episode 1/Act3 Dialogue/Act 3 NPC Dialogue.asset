@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597f6351de1675c498fc60f36f3996c2, type: 3}
+  m_Name: Act 3 NPC Dialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - '"AHHH"'
+  - Hello, are you ok?
+  - '"Please, you need to get out of here"'
+  - What's happening to you?
+  - '"I was attacked by the Resonants."'
+  - '"My family escaped, but I was bitten."'
+  - '"You must leave before I fully turn."'
+  - '"There is a colony far west from here."'
+  - '"I see you have a map already..."'
+  - '"... make sure to use it!"'
+  - "\"If you can make it there, you\u2019ll be safe.\""
+  - "\"It\u2019s happening. Quickly, GO!\""
+  - '"Get away from here."'
+  repeatLines: []

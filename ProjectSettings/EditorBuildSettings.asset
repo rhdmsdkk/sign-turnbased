@@ -27,13 +27,16 @@ EditorBuildSettings:
     path: Assets/Rachel/Scenes/Episode 1/Episode1.unity
     guid: 23a3862deef43d340a4cbe3074909157
   - enabled: 1
-    path: Assets/Rachel/Scenes/Episode 1/Episode1Act1.unity
+    path: Assets/Rachel/Scenes/Episode 1/Episode0Act1.unity
     guid: 01988d48373c15b48b3a82439b2b4671
   - enabled: 1
     path: Assets/Rachel/Scenes/Episode 1/Episode1Act2.unity
     guid: d53559341ff40eb488e93a48b10305e9
   - enabled: 1
-    path: Assets/Rachel/Scenes/Episode 1/Episode1Act3.unity
+    path: Assets/Rachel/Scenes/Episode 1/Combat_Episode1Act3.unity
     guid: afed8cfea22d8014ba21d41ed9b9a2ff
+  - enabled: 1
+    path: Assets/Rachel/Scenes/Episode 1/Episode1Act3.unity
+    guid: 643d58356c5b041ad907e92c5b76753d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
