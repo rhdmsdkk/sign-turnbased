@@ -26,8 +26,26 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        currentEpisode = 1;
+        
         string currentScene = SceneManager.GetActiveScene().name;
-        currentEpisode = Convert.ToInt32(currentScene.Substring(currentScene.Length - 1, 1));
+
+        // index after episode
+        int startIndex = currentScene.IndexOf("Episode") + "Episode".Length;
+
+        // index of act
+        int endIndex = currentScene.IndexOf("Act");
+
+        if (endIndex > startIndex)
+        {
+            // get episode number
+            string episodeString = currentScene.Substring(startIndex, endIndex - startIndex);
+            
+            if (int.TryParse(episodeString, out int episodeNumber))
+            {
+                currentEpisode = episodeNumber;
+            }
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
