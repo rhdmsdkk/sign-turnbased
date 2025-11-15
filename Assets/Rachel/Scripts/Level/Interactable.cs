@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour
         {
             EndDialogue();
         } 
-        else
+        else if (isPlayingDialogue)
         {
             dialogueDisplay.text = lines[i];
         }
